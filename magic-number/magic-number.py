@@ -13,8 +13,12 @@ while playing:
       points += 1
     elif cmd.startswith("math: "):
       ma = cmd.replace("math: ","")
-      evaled = eval(ma)
-      print("{}".format(evaled))
+      try:
+        evaled = eval(ma)
+        print("{}".format(evaled))
+      except:
+        print("Math crashed")
+        continue
     elif cmd == "getpoints":
       print("Points: {}".format(points))
     elif cmd == "end":
