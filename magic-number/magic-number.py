@@ -11,7 +11,7 @@ while playing:
       print("Got it! ")
       gotit = True
       points += 1
-    elif cmd.startswith("math: ")
+    elif cmd.startswith("math: "):
       ma = cmd.split("math: ")[0]
       print("{}".format(eval(ma)))
     elif cmd == "getpoints":
@@ -19,5 +19,6 @@ while playing:
     elif cmd == "end":
       gotit = None
       playing = False
+
 print("---- Game over ----")
 print("Points: {}".format(points))
