@@ -13,7 +13,9 @@ while playing:
       points += 1
     elif cmd.startswith("math: "):
       ma = cmd.split("math: ")[0]
-      print("{}".format(eval(ma)))
+      print(ma)
+      evaled = eval(ma)
+      print("{}".format(evaled))
     elif cmd == "getpoints":
       print("Points: {}".format(points))
     elif cmd == "end":
