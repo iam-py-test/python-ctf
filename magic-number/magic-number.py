@@ -12,7 +12,7 @@ while playing:
       gotit = True
       points += 1
     elif cmd.startswith("math: "):
-      ma = cmd.replace("math: ")
+      ma = cmd.replace("math: ","")
       print(ma)
       evaled = eval(ma)
       print("{}".format(evaled))
