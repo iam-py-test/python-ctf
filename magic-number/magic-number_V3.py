@@ -13,11 +13,11 @@ help: Display this help message
 """
 
 while playing:
-  numb = hashlib.md5(str(random.randrange(0,10000)))
+  numb = hashlib.md5(str(random.randrange(0,5000)).encode()).hexdigest()
   got = False
   while got == False:
     cmd = input("What is the magic number? ")
-    if cmd == str(numb):
+    if hashlib.md5(cmd.encode()).hexdigest() == str(numb):
       print("Got it! ")
       got = True
       point += 1
