@@ -21,5 +21,15 @@ What we need to do is escape the `int` function. The end command which works is 
 It worked! The end print of the number is unneeded, however, it does need something valid to match the end ) from the `int` function.
 
 ### Version 2
-Version 2 is a bit more complex, and fixes the type check exploit, so the steps above won't work on it
+Version 2 is a bit more complex, and fixes the type check exploit, so the steps above won't work on it.
+
+### Changes:
+- The type check exploit has been fixed
+- The variable name has been changed
+- Known exploit strings are blocked by the math function
+However, the math function still uses eval, which means we still can bypass the protection using `math rdnumb + 0`.
+
+### Version 3
+Version 3 is even more secure. The number isn't even stored in memory; just the hash. <br>
+But it _still_ uses eval for the math function. It does block any direct access to the variable using blocklisting (and changed the name), however, there are many ways to hide (obfuscate) the payload. I used base64, but you can use others. Again, I used `math eval(__import__("base64").b64decode("bnVtYg=="))`, but there are other (better) solutions. Once I got the MD5 hash, I just created a Python script to crack it.
 
